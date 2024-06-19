@@ -18,6 +18,9 @@ export async function POST(request: NextRequest){
         data:{
             title: body.title,
             price: body.price,
+            category: body.category,
+            description: body.description,
+            rating: parseFloat(body.rating)
         }
     });
 
