@@ -15,12 +15,13 @@ export async function GET(request: NextRequest, {params:{id}}:Props){
 }
 
 
-export async function PUT(request: NextRequest){
+export async function PUT(request: NextRequest, {params:{id}}:Props){
     const body = await request.json();
     const valiator = schema.safeParse(body);
 
     if(!valiator.success)
      return NextResponse.json(valiator.error.errors, {status: 400})
+    
     const existinguser = await prisma.user.findUnique({
         where: {email: body.email}
     })
