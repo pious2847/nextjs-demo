@@ -17,7 +17,9 @@ const NavBar = () => {
         {status ==='loading' && <div>Loading...</div>}
         {status === 'authenticated' && <div className='flex gap-2 justify-center'>
             {/* <img className='h-[30px] rounded-2xl' src={session.user!.image} alt={session.user!.name} /> */}
-             {session.user!.name}</div>}
+             {session.user!.name}
+             <Link href='/api/auth/signout'>Logout</Link>
+             </div>}
         {status === 'unauthenticated' && <Link href='/api/auth/signin'>signin</Link>}
          
          
