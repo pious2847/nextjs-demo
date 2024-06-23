@@ -20,6 +20,7 @@ model User {
   username      String?         @unique
   email         String?         @unique
   emailVerified DateTime?
+  hashedPass    String?
   image         String?
   Session       Session[]
   Account       Account?
